@@ -1,3 +1,4 @@
+# docker build -t otus-homework-03:latest . && docker run -p 8000:8000 otus-homework-03:latest
 FROM python:3.9-buster
 
 ENV HOME=/root
@@ -19,4 +20,4 @@ COPY main.py ${WORKDIR}
 
 EXPOSE 8000
 
-CMD ["uvicorn", "--host=0.0.0.0", "main:app"]
+CMD ["uvicorn", "--host=0.0.0.0", "--port=8000", "main:app"]
